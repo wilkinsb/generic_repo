@@ -8,3 +8,5 @@ even more
 test date tags
 date formatting
 test merges
+
+test the git push origin --all command for hotfixes
