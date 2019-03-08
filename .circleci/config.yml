@@ -41,7 +41,7 @@ jobs:
           name: Zip and Upload to S3 bucket w/ metadata
           command: |
             . venv/bin/activate
-            git archive --format=zip HEAD -o generic_repo.zip
+            git archive -o generic_repo.zip HEAD
 
             GITHASH=$(git rev-parse HEAD)
 
