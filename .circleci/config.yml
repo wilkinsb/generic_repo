@@ -30,13 +30,6 @@ jobs:
             - ./venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
         
-      # run tests!
-      # - run:
-      #     name: Run Pytests here
-      #     command: |
-      #       . venv/bin/activate
-      #       pytest
-
       - run:
           name: Zip and Upload to S3 bucket w/ metadata
           command: |
@@ -48,7 +41,7 @@ jobs:
             aws s3 cp generic_repo.zip s3://ami-production-dist/generic_repo/ --metadata \
             '{"githash": "'"$GITHASH"'"}'
 
-            
+
 
       - store_artifacts:
           path: test-reports
